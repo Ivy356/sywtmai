@@ -10,8 +10,10 @@ function producePrevious(generatorArray, diff) {
 function gameLoop(that) {
   let diff = (Date.now() - that.player.lastUpdate)/1000
   that.player.money += that.player.marketing[0].productionPerSecond * diff
+  that.player.money += that.player.marketing2[0].productionPerSecond * diff
   that.player.graphics += that.player.artists[0].productionPerSecond * diff
   producePrevious(that.player.marketing, diff)
+  producePrevious(that.player.marketing2, diff)
   producePrevious(that.player.artists, diff)
   producePrevious(that.player.lootboxTeam, diff)
 
