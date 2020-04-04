@@ -52,7 +52,7 @@
         <div 
           class="generator marketing-generator"
           :class="{ 'generator--unavailable': !generator.canBuy}"
-          v-for="generator in player.marketing">
+          v-for="generator in player.marketing2">
           <generator :generator="generator"/>
         </div>
         <add-generator-button target="marketing2"/>
