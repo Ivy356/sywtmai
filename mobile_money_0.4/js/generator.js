@@ -19,7 +19,9 @@ class Generator {
     this.cost *= 1 + (this.tier+1)*0.25
     this.amount += 1
     this.bought += 1
-    if (this.bought%100 == 0) this.mult *= 5
+    if (this.bought%100 == 0) this.mult *= 10
+    else if (this.bought%75 == 0) this.mult *= 7
+    else if (this.bought%50 == 0) this.mult *= 5
     else if (this.bought%25 == 0) this.mult *= 3
   }
 
@@ -39,13 +41,17 @@ function getColumn(type) {
     return 2;
 
     case "lootboxTeam":
-    return 3
+    return 3;
+      
+    case "marketing2":
+    return 4;
   }
 }
 
 const marketing_names = ["Facebook Ad Campaign"]
 const artist_names = ["Deviantart Artist"]
 const lootboxTeam_names = ["Valve Interns"]
+const marketing2_names = ["Twitter Ad Campaign"]
 
 function generateGeneratorName(tier, type) {
   switch (type) {
@@ -57,6 +63,9 @@ function generateGeneratorName(tier, type) {
 
     case "lootboxTeam":
     return lootboxTeam_names[tier%lootboxTeam_names.length];
+      
+    case "marketing2":
+    return marketing2_names[tier%marketing2_names.length];
   }
 }
 
