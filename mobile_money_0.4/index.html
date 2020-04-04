@@ -48,6 +48,15 @@
         </div>
         <add-generator-button target="lootboxTeam"/>
       </div>
+      <div class="generators-container">
+        <div 
+          class="generator marketing-generator"
+          :class="{ 'generator--unavailable': !generator.canBuy}"
+          v-for="generator in player.marketing">
+          <generator :generator="generator"/>
+        </div>
+        <add-generator-button target="marketing2"/>
+      </div>
     </div>
   </div>
 </body>
