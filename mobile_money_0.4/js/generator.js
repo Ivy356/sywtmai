@@ -16,10 +16,12 @@ class Generator {
   buy() {
     if (!this.canBuy) return
     player.money -= this.cost
-    this.cost *= 1 + (this.tier+1)*0.25
+    this.cost *= 1 + (this.tier+1)*0.15
     this.amount += 1
     this.bought += 1
-    if (this.bought%100 == 0) this.mult *= 10
+    if (this.bought%200 == 0) this.mult *= 50
+    else if (this.bought%150 == 0) this.mult *= 25
+    else if (this.bought%100 == 0) this.mult *= 10
     else if (this.bought%75 == 0) this.mult *= 7
     else if (this.bought%50 == 0) this.mult *= 5
     else if (this.bought%25 == 0) this.mult *= 3
