@@ -10,14 +10,6 @@ for (let i = 0; i < 10; i++) {
     mult: 1
   }
   generators.push(generator)
-}
-
-function format(amount) {
-  let power = Math.floor(Math.log10(amount))
-  let mantissa = amount / Math.pow(10, power)
-  if (power < 3) return amount.toFixed(2)
-  return mantissa.toFixed(2) + "e" + power
-}
 
 function buyGenerator(i) {
   let g = generators[i - 1]
@@ -31,7 +23,6 @@ function buyGenerator(i) {
 
 
 function updateGUI() {
-  document.getElementById("currency").textContent = "You have $" + format(money)
   for (let i = 0; i < 10; i++) {
     let g = generators[i]
     document.getElementById("gen" + (i + 1)).innerHTML = "Amount: " + format(g.amount) + "<br>Bought: " + g.bought + "<br>Mult: " + format(g.mult) + "x<br>Cost: " + format(g.cost)
