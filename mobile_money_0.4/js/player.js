@@ -21,7 +21,7 @@ var firstMarketing = {
 var secondMarketing = {
   tier: 0,
   cost: 500,
-  mult: 1,
+  mult: 10,
   amount: 0,
   bought: 0,
   name: "Twitter Ad Campaign I"
